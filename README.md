@@ -1,12 +1,12 @@
-# StatArrays
+# SampleArrays.jl
 
-[![Build Status](https://github.com/Ntropic/StatArrays.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/Ntropic/StatArrays.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Build Status](https://github.com/Ntropic/SampleArrays.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/Ntropic/SampleArrays.jl/actions/workflows/CI.yml?query=branch%3Amain)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**StatArrays.jl** provides a flexible data structure, `StatArray`, for statistical data storage and analysis in Julia. Each element of a `StatArray` contains a vector of data points, with built-in methods to compute key statistics such as the mean, standard deviation, and variance. 
+**SampleArrays.jl** provides a flexible data structure, `SampleArray`, for statistical data storage and analysis in Julia. Each element of a `SampleArray` contains a vector of data points, with built-in methods to compute key statistics such as the mean, standard deviation, and variance. 
 
 ### Key Features:
-- **Efficient Data Storage**: Each element of a `StatArray` stores a vector of values for statistical analysis.
+- **Efficient Data Storage**: Each element of a `SampleArray` stores a vector of values for statistical analysis.
 - **Built-in Statistical Methods**:
   - `mean`, `std`, `var`: Compute the mean, standard deviation, and variance.
   - `lower_std`, `upper_std`: Calculate standard deviations for values below or above the mean.
@@ -22,13 +22,13 @@
 To install the package, run:
 ```julia
 using Pkg
-Pkg.add("StatArrays")
+Pkg.add("SampleArrays")
 ``` 
 
 ## Usage
 ``` 
-using StatArrays 
-A = StatArray{Float64}(2, 2)
+using SampleArrays 
+A = SampleArray{Float64}(2, 2)
 A[1, 1] += 1.0
 A[:, 1] += 2.0
 A[1, :] += 3.0

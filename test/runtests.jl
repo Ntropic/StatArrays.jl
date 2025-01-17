@@ -1,10 +1,10 @@
-include("../src/StatArrays.jl")
-using .StatArrays  # Use the local module
+include("../src/SampleArrays.jl")
+using .SampleArrays  # Use the local module
 using Test
 
-@testset "StatArrays.jl" begin
+@testset "SampleArrays.jl" begin
     # Create a 2x2 StatArray
-    A = StatArray{Float64}(2, 2)
+    A = SampleArray{Float64}(2, 2)
     
     # Test single index appending
     A[1, 1] += 1.0
