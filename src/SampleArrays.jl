@@ -273,5 +273,4 @@ function Base.:/(A::SampleArray, scalar::T) where {T}
 end
 
 
-
 end
