@@ -1,0 +1,13 @@
+name = "StatArrays"
+uuid = "7b9c7ff1-6bbb-440a-bdbd-fed9c8fef328"
+authors = ["Michael Schilling <21343359+Ntropic@users.noreply.github.com>"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.6.7"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
