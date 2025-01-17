@@ -1,4 +1,4 @@
-name = "StatArrays"
+name = "SampleArrays"
 uuid = "740e20ac-97ea-4c00-b3fe-fb313cfcaca0"
 authors = ["Michael Schilling <21343359+Ntropic@users.noreply.github.com>"]
 version = "0.0.2"
