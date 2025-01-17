@@ -99,17 +99,6 @@ function Base.setindex!(A::SampleArray, values::SampleArray, I::Vararg{Any})
 end
 
 function Base.getindex(A::SampleArray, I::Vararg{Any})
-    # Check for slicing by detecting `Colon`
-    if any(x -> x isa Colon, I)
-        # Extract the appropriate slice of the underlying `data`
-        sliced_data = A.data[I...]
-        return SampleArray(sliced_data)
-    else
-        # Return the specific element as usual
-        return A.data[I...]
-    end
-end
-function Base.getindex(A::SampleArray, I::Vararg{Any})
     # Translate user-provided indices into canonical array indices
     indices = Base.to_indices(A.data, I)
 
