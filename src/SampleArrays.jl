@@ -204,7 +204,7 @@ function lower_std(data::Vector{T}) where T
     if isempty(data) || length(data) < 2
         return NaN
     end
-    m = Statistics.mean(data)
+    m = mean(data)
     lower_samples = filter(x -> x < m, data)
     if length(lower_samples) < 2
         return NaN
@@ -216,7 +216,7 @@ function upper_std(data::Vector{T}) where T
     if isempty(data) || length(data) < 2
         return NaN
     end
-    m = Statistics.mean(data)
+    m = mean(data)
     upper_samples = filter(x -> x >= m, data)
     if length(upper_samples) < 2
         return NaN

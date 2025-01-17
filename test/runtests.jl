@@ -16,6 +16,8 @@ using Test
     @test A[1, 1].mean ≈ 2.0
     @test A[1, 1].std ≈ 0.816496580927726
     @test A[1, 1].var ≈ 0.6666666666666666
+    @test isnan(A[1, 1].lower_std )
+    @test A[1, 1].upper_std ≈ 0.7071067811865476
     
     # Test slicing and appending
     A[:, 2] = [4.0, 5.0]
