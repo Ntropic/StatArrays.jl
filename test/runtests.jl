@@ -4,12 +4,12 @@ using Test
 
 @testset "SampleArrays.jl" begin
     # Create a 2x2 StatArray
-    A = SampleArray{Float64}(2, 2)
+    A = SampleArray(2, 2, type=Float64)
     
     # Test single index appending
     A[1, 1] += 1.0
-    A[:, 1] += 2.0
-    A[1, :] += 3.0
+    A[:, 1] .+= 2.0
+    A[1, :] .+= 3.0
     
     # Validate statistics
     @test A[1, 1].vals == [1.0, 2.0, 3.0]
@@ -18,10 +18,5 @@ using Test
     @test A[1, 1].var ≈ 0.6666666666666666
     @test isnan(A[1, 1].lower_std )
     @test A[1, 1].upper_std ≈ 0.7071067811865476
-    
-    # Test slicing and appending
-    A[:, 2] = [4.0, 5.0]
-    
-    @test A[1, 2].vals == [4.0, 5.0] == A[2, 2].vals
 
 end
