@@ -1,7 +1,7 @@
 # StatArrays
 
 [![Build Status](https://github.com/Ntropic/StatArrays.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/Ntropic/StatArrays.jl/actions/workflows/CI.yml?query=branch%3Amain)
-[![Coverage](https://codecov.io/gh/Ntropic/StatArrays.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/Ntropic/StatArrays.jl)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **StatArrays.jl** provides a flexible data structure, `StatArray`, for statistical data storage and analysis in Julia. Each element of a `StatArray` contains a vector of data points, with built-in methods to compute key statistics such as the mean, standard deviation, and variance. 
 
