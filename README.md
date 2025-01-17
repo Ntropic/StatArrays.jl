@@ -25,7 +25,7 @@ Pkg.add("SampleArrays")
 ``` 
 
 ## Usage
-``` 
+``` julia
 using SampleArrays 
 A = SampleArray(2, 2; type = Float64)
 A[1, 1] += 1.0
