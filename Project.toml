@@ -1,7 +1,7 @@
 name = "SampleArrays"
 uuid = "740e20ac-97ea-4c00-b3fe-fb313cfcaca0"
 authors = ["Michael Schilling <21343359+Ntropic@users.noreply.github.com>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
