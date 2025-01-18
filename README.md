@@ -7,7 +7,7 @@
 
 ### Key Features:
 - **Built-in Statistical Methods**:
-  - `mean`, `std`, `var`: Compute the mean, standard deviation, and variance.
+  - `mean`, `std`, `var`, `min`, `max`: Compute the mean, standard deviation, variance, minimum and maximum values.
   - `lower_std`, `upper_std`: Calculate standard deviations for values below or above the mean.
   - `val`: Access the vectors of sample values 
 - **Create Arrays of Samples**:

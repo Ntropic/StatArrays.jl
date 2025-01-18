@@ -68,25 +68,19 @@ function upper_std(s::Samples{T}) where {T}
     dev = sum((x - μ)^2 for x in upper_vals) / length(upper_vals)
     return sqrt(dev)
 end
-
-function Base.getproperty(s::Samples, prop::Symbol)
-    # If prop matches any “computed” property, return it
-    if prop === :mean
-        return mean(s)
-    elseif prop === :std
-        return std(s)
-    elseif prop === :vals 
-        return s.data
-    elseif prop === :var
-        return var(s)
-    elseif prop === :lower_std
-        return lower_std(s)
-    elseif prop === :upper_std
-        return upper_std(s)
-    else
-        # otherwise, fall back to normal field access
-        return getfield(s, prop)
+function min(s::Samples{T}) where {T}
+    n = length(s.data)
+    if n == 0
+        return NaN
     end
+    return minimum(s.data)
+end
+function max(s::Samples{T}) where {T}
+    n = length(s.data)
+    if n == 0
+        return NaN
+    end
+    return maximum(s.data)
 end
 
 function Base.string(s::Samples{T}) where {T}
@@ -113,6 +107,29 @@ end
 return arr
 end
 
+function Base.getproperty(s::Samples, prop::Symbol)
+    # If prop matches any “computed” property, return it
+    if prop === :mean
+        return mean(s)
+    elseif prop === :std
+        return std(s)
+    elseif prop === :vals 
+        return s.data
+    elseif prop === :var
+        return var(s)
+    elseif prop === :lower_std
+        return lower_std(s)
+    elseif prop === :upper_std
+        return upper_std(s)
+    elseif prop === :min
+        return min(s)
+    elseif prop === :max
+        return max(s)
+    else
+        # otherwise, fall back to normal field access
+        return getfield(s, prop)
+    end
+end
 function Base.getproperty(obj::Array{Samples{T}}, prop::Symbol) where {T}
     if prop === :mean
         return map(mean, obj)  # Apply `mean` to each element in `obj.data`
@@ -126,6 +143,10 @@ function Base.getproperty(obj::Array{Samples{T}}, prop::Symbol) where {T}
         return map(lower_std, obj)  # Apply `lower_std` to each element in `obj.data`
     elseif prop === :upper_std
         return map(upper_std, obj)  # Apply `upper_std` to each element in `obj.data`
+    elseif prop === :min
+        return map(min, obj)  # Apply `min` to each element in `obj.data`
+    elseif prop === :max
+        return map(max, obj)  # Apply `max` to each element in `obj.data`
     else
         # For fields, fall back to normal field access
         return getfield(obj, prop)
