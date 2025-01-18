@@ -17,8 +17,8 @@ using Test
     @test A[1, 1].std ≈ 0.816496580927726
     @test A[1, 1].var ≈ 0.6666666666666666
     @test isnan(A[1, 1].lower_std )
-    @test A[1,1].min = 1.0
-    @test A[1, 1].max = 3.0
+    @test A[1,1].min == 1.0
+    @test A[1, 1].max == 3.0
     @test A[1, 1].upper_std ≈ 0.7071067811865476
 
 end
