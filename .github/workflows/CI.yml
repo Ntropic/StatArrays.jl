@@ -18,7 +18,7 @@ jobs:
     steps:
     # Check out the repository
     - name: Check out code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     # Set up Julia
     - name: Set up Julia
